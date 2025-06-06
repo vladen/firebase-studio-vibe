@@ -1,7 +1,7 @@
 
 import { LogFeed } from '@/components/monitoring/log-feed';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Activity, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Activity, AlertTriangle, Users, Server } from 'lucide-react';
 
 // Mock data for stats - replace with actual data fetching later
 const mockStats = {
@@ -45,9 +45,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Client Events</CardTitle>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground">
-              <path d="M17 14V2H7v12h10zM7 22h10M12 14v8M5 10h2m10 0h2M5 6h2m10 0h2" /> {/* Custom client icon */}
-            </svg>
+            <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{mockStats.clientEvents.toLocaleString()}</div>
@@ -57,9 +55,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Server Events</CardTitle>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground">
-              <rect x="2" y="2" width="20" height="8" rx="2" ry="2" /> <rect x="2" y="14" width="20" height="8" rx="2" ry="2" /> <line x1="6" y1="6" x2="6.01" y2="6" /> <line x1="6" y1="18" x2="6.01" y2="18" /> {/* Lucide Server icon */}
-            </svg>
+            <Server className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{mockStats.serverEvents.toLocaleString()}</div>

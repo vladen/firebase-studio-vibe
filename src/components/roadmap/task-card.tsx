@@ -68,7 +68,7 @@ export function TaskCard({ task }: TaskCardProps) {
         {task.assignee ? (
           <div className="flex items-center">
             <Avatar className="h-6 w-6 mr-1">
-              <AvatarImage src={`https://i.pravatar.cc/40?u=${task.assignee}`} alt={task.assignee} data-ai-hint="person avatar" />
+              <AvatarImage src={'https://placehold.co/40x40.png'} alt={task.assignee} data-ai-hint="person avatar" />
               <AvatarFallback>{task.assignee.substring(0, 1).toUpperCase()}</AvatarFallback>
             </Avatar>
             {task.assignee}

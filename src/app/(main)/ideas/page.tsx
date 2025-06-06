@@ -29,10 +29,10 @@ export default function IdeasPage() {
     loadPersistedIdeas();
   }, []);
 
-  const handleNewRefinedIdea = (refinedOutput: RefineIdeaOutput) => {
+  const handleNewRefinedIdea = (originalIdeaText: string, refinedOutput: RefineIdeaOutput) => {
     const newIdea: Idea = {
       id: crypto.randomUUID(),
-      text: "Original idea text would be here if passed from form component", // This needs to be passed properly or state managed higher
+      text: originalIdeaText,
       submittedAt: new Date(),
       status: 'review', // Default status after AI refinement
       refinedTitle: refinedOutput.issueTitle,

@@ -21,7 +21,7 @@ const ideaFormSchema = z.object({
 type IdeaFormValues = z.infer<typeof ideaFormSchema>;
 
 interface IdeaFormProps {
-  onIdeaSubmitted: (refinedIdea: RefineIdeaOutput) => void;
+  onIdeaSubmitted: (originalIdeaText: string, refinedIdea: RefineIdeaOutput) => void;
 }
 
 export function IdeaForm({ onIdeaSubmitted }: IdeaFormProps) {
@@ -40,7 +40,7 @@ export function IdeaForm({ onIdeaSubmitted }: IdeaFormProps) {
     try {
       const result: ActionResult<RefineIdeaOutput> = await handleIdeaSubmissionAction(values.ideaText);
       if (result.success && result.data) {
-        onIdeaSubmitted(result.data);
+        onIdeaSubmitted(values.ideaText, result.data);
         toast({
           title: "💡 Idea Refined!",
           description: `"${result.data.issueTitle}" has been processed.`,
