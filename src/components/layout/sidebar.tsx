@@ -3,11 +3,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, LayoutDashboard, Lightbulb, ListChecks, GitMerge, Settings, BarChart3, FileText } from "lucide-react";
+import { LayoutDashboard, BarChart3, Lightbulb, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Image from "next/image";
 
 interface NavItem {
   href: string;
@@ -16,10 +15,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: "/dashboard", label: "Monitoring", icon: LayoutDashboard },
-  { href: "/roadmap", label: "Roadmap", icon: BarChart3 },
-  { href: "/ideas", label: "Ideas", icon: Lightbulb },
-  { href: "/grooming", label: "Task Grooming", icon: ListChecks },
+  { href: "/dashboard", label: "Activity Feed", icon: LayoutDashboard },
+  { href: "/roadmap", label: "Project Roadmap", icon: BarChart3 },
+  { href: "/ideas", label: "Project Ideas", icon: Lightbulb },
+  // { href: "/grooming", label: "Task Grooming", icon: ListChecks }, // Disabled for now
 ];
 
 const Logo = () => (
